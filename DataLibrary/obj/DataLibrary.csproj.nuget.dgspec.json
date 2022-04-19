@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj": {}
+    "C:\\Users\\danke\\Github\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\danke\\Github\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\danke\\Github\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj",
+        "projectPath": "C:\\Users\\danke\\Github\\RestaurantPicker\\DataLibrary\\DataLibrary.csproj",
         "packagesPath": "C:\\Users\\danke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\DataLibrary\\obj\\",
+        "outputPath": "C:\\Users\\danke\\Github\\RestaurantPicker\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\danke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj": {
-                "projectPath": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj"
+              "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj": {
+                "projectPath": "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj"
               }
             }
           }
@@ -46,21 +46,25 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.0-*, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
@@ -86,18 +90,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj": {
+    "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj",
+        "projectUniqueName": "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj",
         "projectName": "MyDataModels",
-        "projectPath": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj",
+        "projectPath": "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\MyDataModels.csproj",
         "packagesPath": "C:\\Users\\danke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danke\\Desktop\\RestaurantPicker\\ClassProject\\RestaurantPicker\\MyDataModels\\obj\\",
+        "outputPath": "C:\\Users\\danke\\Github\\RestaurantPicker\\MyDataModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\danke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,13 +132,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -156,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

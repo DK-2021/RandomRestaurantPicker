@@ -89,6 +89,7 @@
             this.ConvenienceComboBox.Name = "ConvenienceComboBox";
             this.ConvenienceComboBox.Size = new System.Drawing.Size(180, 23);
             this.ConvenienceComboBox.TabIndex = 11;
+            
             // 
             // priceLabel
             // 

@@ -49,7 +49,7 @@ namespace MyDataManagerWinForms
             convenience = Task.Run(() => dataoperations.GetConveniences()).Result;
             ConvenienceComboBox.DataSource = convenience;
 
-            restaurants = Task.Run (() =>dataoperations.GetRestaurants()).Result;
+            restaurants = Task.Run (() => dataoperations.GetRestaurants()).Result;
             
 
             dgItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -79,23 +79,22 @@ namespace MyDataManagerWinForms
         private void Refresh()
         {
             var priceValue = (Price)pricePointComboBox.SelectedValue;
-            var convValue = ConvenienceComboBox.SelectedValue;
-            var cuisValue = CuisineComboBox.SelectedValue;
+            var convValue = (Convenience)ConvenienceComboBox.SelectedValue;
+            var cuisValue = (Cuisine)CuisineComboBox.SelectedValue;
 
-            using (var db = new DataDbContext(_optionsBuilder.Options))
+            
+            var myOps = new DataOperations();
+            var result = Task.Run(() => myOps.GetMatches((int)priceValue, convValue, cuisValue)).Result;
+            dgItems.DataSource = result.Select(x => new
             {
-                var restaurantSearch = db.Restaurants
-                    .Select(x => new
-                    {
-                        Id = x.Id,
-                        Name = x.Name,
-                        Price = (Price)x.Price,
-                        Convenience = x.Convenience,
-                        Cuisine = x.Cuisine
-                    }).Where(x => x.Price == priceValue && x.Convenience == convValue && x.Cuisine == cuisValue).OrderBy(x => x.Name).ToListAsync().Result;
+                restaurantName = x.Name,
+                Price = priceValue,
+                Convenience = x.Convenience.Type,
+                Cuisine = x.Cuisine.Type
 
-                dgItems.DataSource = restaurantSearch;
-            }
+
+            }).ToList();
+
         }
 
         private void btnSurpriseMe_Click(object sender, EventArgs e)
@@ -197,5 +196,7 @@ namespace MyDataManagerWinForms
             var gettingData = new GetData();
             gettingData.GetDataAsync();
         }
+
+        
     }
 }

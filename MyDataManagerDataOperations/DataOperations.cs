@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 using System;
 using MyDataModels;
+using RestDataService;
 
 namespace MyDataManagerDataOperations
 {
@@ -11,10 +12,12 @@ namespace MyDataManagerDataOperations
     {
         private static IConfigurationRoot _configuration;
         public static DbContextOptionsBuilder<DataDbContext> _optionsBuilder;
+
         public DataOperations()
         {
             BuildOptions();
         }
+
         static void BuildOptions()
         {
             _configuration = ConfigurationBuilderSingleton.ConfigurationRoot;
@@ -25,31 +28,45 @@ namespace MyDataManagerDataOperations
         {
             using (var dbContext = new DataDbContext(_optionsBuilder.Options))
             {
-                try
-                {
-                    var cuisine = await dbContext.Cuisines.OrderBy(x => x.Type).ToListAsync();
-                    return cuisine;
-                }
-                catch (Exception ex)
-                {
-
-                    throw;
-                }
+                var service = new RestData(dbContext);
+                return await service.GetCuisines();
             };
         }
         public async Task <List<Convenience>> GetConveniences()
         {
             using (var dbContext = new DataDbContext(_optionsBuilder.Options))
             {
-                return await dbContext.Conveniences.OrderBy(x => x.Type).ToListAsync();
+                var service2 = new RestData(dbContext);
+                return await service2.GetConveniences();
 
             }
         }
-        public List<Restaurant> GetRestaurants()  
+        public async Task <List<Restaurant>> GetRestaurants()  
         {
             using (var dbContext = new DataDbContext(_optionsBuilder.Options))
             {
-                return dbContext.Restaurants.OrderBy(x => x.Name).ToList();
+                var service3 = new RestData(dbContext);
+                return await service3.GetRestaurants();
+            }
+        }
+
+        public async Task<List<Restaurant>> GetMatches(int priceValue, Convenience convValue, Cuisine cuisValue)
+        {
+            using (var db = new DataDbContext(_optionsBuilder.Options))
+            {
+                
+                return await db.Restaurants
+                    .Select(x => new Restaurant
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        Price = x.Price,
+                        Convenience = x.Convenience,
+                        Cuisine = x.Cuisine,
+                        ConvenienceId = x.ConvenienceId,
+                        CuisineId = x.CuisineId
+                    }).Where(x => x.Price == priceValue && x.Convenience == convValue && x.Cuisine == cuisValue)
+                    .OrderBy(x => x.Name).ToListAsync();
             }
         }
     }

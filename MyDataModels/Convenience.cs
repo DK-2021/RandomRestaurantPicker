@@ -22,8 +22,22 @@ namespace MyDataModels
             return Type;
         }
 
+
+
         
     }
+
+    //public enum ConvenienceType
+    //{
+    //    [Display(Name = "Sit Down")]
+    //    SitDown = 1,
+    //    [Display(Name = "Take Out")]
+    //    TakeOut = 2,
+    //    [Display(Name = "Fast Food")]
+    //    FastFood = 3,
+    //    [Display(Name = "Unassigned")]
+    //    Unassigned = 4
+    //}
 
 
 }

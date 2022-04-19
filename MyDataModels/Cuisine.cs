@@ -23,4 +23,13 @@ namespace MyDataModels
         }
 
     }
+    //public enum CuisineType
+    //{
+    //    Italian = 1,
+    //    American = 2,
+    //    Mexican = 3,
+    //    Korean = 4,
+    //    Chinese = 5,
+    //    Unassigned = 6
+    //}
 }
